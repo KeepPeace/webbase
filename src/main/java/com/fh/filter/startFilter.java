@@ -1,5 +1,13 @@
 package com.fh.filter;
 
+import com.fh.controller.base.BaseController;
+import com.fh.plugin.websocketInstantMsg.ChatServer;
+import com.fh.plugin.websocketOnline.OnlineChatServer;
+import com.fh.util.Const;
+import com.fh.util.Tools;
+import org.java_websocket.WebSocketImpl;
+
+import javax.servlet.*;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.Calendar;
@@ -7,27 +15,13 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-
-import org.java_websocket.WebSocketImpl;
-
-import com.fh.plugin.websocketInstantMsg.ChatServer;
-import com.fh.plugin.websocketOnline.OnlineChatServer;
-import com.fh.util.Const;
-import com.fh.util.Tools;
-import com.fh.controller.base.BaseController;
-
 /**
  * 创建人：FH 
  * 创建时间：2014年2月17日
  * @version
+ * 初始化websocket服务
  */
-public class startFilter extends BaseController implements Filter{
+public class StartFilter extends BaseController implements Filter{
 
 	
 	
@@ -36,6 +30,7 @@ public class startFilter extends BaseController implements Filter{
 	 * 初始化
 	 */
 	public void init(FilterConfig fc) throws ServletException {
+		logger.info("StartFilter");
 		this.startWebsocketInstantMsg();
 		this.startWebsocketOnline();
 	}
@@ -114,7 +109,6 @@ public class startFilter extends BaseController implements Filter{
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain arg2) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	

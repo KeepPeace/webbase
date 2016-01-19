@@ -217,7 +217,7 @@ public class Tools {
 	 
 	/**
 	 * 读取txt里的单行内容
-	 * @param filePath  文件路径
+	 * @param fileP  文件路径
 	 */
 	public static String readTxtFile(String fileP) {
 		try {

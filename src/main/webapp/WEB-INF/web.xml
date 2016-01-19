@@ -12,6 +12,7 @@
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>classpath:log4j.properties</param-value>
 	</context-param>
+
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -52,9 +53,15 @@
 		<filter-name>loginFilter</filter-name>
 		<filter-class>com.fh.filter.LoginFilter</filter-class>
 	</filter>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -73,18 +80,17 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	<!-- tomcat等 启动之前执行 -->
-	<filter>
-		<filter-name>startFilter</filter-name>
-		<filter-class>com.fh.filter.startFilter</filter-class>
-	</filter>
+	<!-- 项目启动时执行 -->
+    <!-- 没有配置filter-mapping -->
+	<!--<filter>-->
+		<!--<filter-name>startFilter</filter-name>-->
+		<!--<filter-class>com.fh.filter.StartFilter</filter-class>-->
+	<!--</filter>-->
 	
 	<!-- Shiro filter start -->
 	<filter>
 		<filter-name>shiroFilter</filter-name>
-		<filter-class>
-			org.springframework.web.filter.DelegatingFilterProxy
-		</filter-class>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 		<init-param>
 			<param-name>targetFilterLifecycle</param-name>
 			<param-value>true</param-value>

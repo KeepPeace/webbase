@@ -545,20 +545,21 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.1</version>
                 <configuration>
-                    <port>8090</port>
+                    <port>8080</port>
                     <path>/webbase</path>
                     <uriEncoding>UTF-8</uriEncoding>
                     <finalName>webbase</finalName>
                     <server>tomcat7</server>
+                    <warSourceDirectory>target/webbase</warSourceDirectory>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>deploy</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>deploy</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
             </plugin>
 
         </plugins>
