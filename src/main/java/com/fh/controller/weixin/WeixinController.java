@@ -1,69 +1,38 @@
 package com.fh.controller.weixin;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.ConnectException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import net.sf.json.JSONObject;
-
-import org.marker.weixin.DefaultSession;
-import org.marker.weixin.HandleMessageAdapter;
-import org.marker.weixin.MySecurity;
-import org.marker.weixin.msg.Data4Item;
-import org.marker.weixin.msg.Msg4Event;
-import org.marker.weixin.msg.Msg4Image;
-import org.marker.weixin.msg.Msg4ImageText;
-import org.marker.weixin.msg.Msg4Link;
-import org.marker.weixin.msg.Msg4Location;
-import org.marker.weixin.msg.Msg4Text;
-import org.marker.weixin.msg.Msg4Video;
-import org.marker.weixin.msg.Msg4Voice;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.fh.controller.base.BaseController;
-
-
-
-
-
-
 import com.fh.service.weixin.command.CommandService;
 import com.fh.service.weixin.imgmsg.ImgmsgService;
 import com.fh.service.weixin.textmsg.TextmsgService;
 import com.fh.util.Const;
 import com.fh.util.PageData;
 import com.fh.util.Tools;
+import net.sf.json.JSONObject;
+import org.marker.weixin.DefaultSession;
+import org.marker.weixin.HandleMessageAdapter;
+import org.marker.weixin.MySecurity;
+import org.marker.weixin.msg.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
+import javax.net.ssl.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.ConnectException;
+import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-
-import javax.net.ssl.X509TrustManager;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * 
 * 类名称：WeixinController.java
 * 类描述： 微信公共平台开发 
-* @author FH
+* @author wang
 * 作者单位： 
 * 联系方式：
 * 创建时间：2014年7月10日

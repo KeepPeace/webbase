@@ -70,7 +70,7 @@ function toUserMsg(toU){
 					websocket.onopen = function() {
 						//连接成功
 						win.setTitle(title + '&nbsp;&nbsp;(已连接)   【现在全局对话】');
-						websocket.send('FHadminqq313596790'+user);
+						websocket.send('FHadmin'+user);
 					}
 					websocket.onerror = function() {
 						//连接失败
@@ -163,7 +163,7 @@ function toUserMsg(toU){
 			win.show();
 			
 			win.on("close",function(){
-				websocket.send('LeaveFHadminqq313596790');
+				websocket.send('LeaveFHadmin');
 				isCreatw = false;
 			 });
 

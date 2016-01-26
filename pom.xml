@@ -545,7 +545,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.1</version>
                 <configuration>
-                    <port>8080</port>
+                    <port>8090</port>
                     <path>/webbase</path>
                     <uriEncoding>UTF-8</uriEncoding>
                     <finalName>webbase</finalName>
