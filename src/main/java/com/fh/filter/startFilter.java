@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * 创建人：FH 
+ * 创建人：wang
  * 创建时间：2014年2月17日
  * @version
  * 初始化websocket服务

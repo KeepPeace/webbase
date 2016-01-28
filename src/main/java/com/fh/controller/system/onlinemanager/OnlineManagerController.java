@@ -1,16 +1,13 @@
 package com.fh.controller.system.onlinemanager;
 
-import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.util.Const;
+import com.fh.util.Jurisdiction;
+import com.fh.util.PageData;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -18,15 +15,15 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.util.Const;
-import com.fh.util.PageData;
-import com.fh.util.Jurisdiction;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 
 /** 
  * 类名称：OnlineManagerController
- * 创建人：FH 
+ * @author wang
  * 创建时间：2015-05-25
  */
 @Controller

@@ -1,28 +1,22 @@
 package com.fh.controller.system.dictionaries;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.fh.controller.base.BaseController;
 import com.fh.entity.Page;
 import com.fh.service.system.dictionaries.DictionariesService;
 import com.fh.service.system.menu.MenuService;
 import com.fh.util.AppUtil;
 import com.fh.util.PageData;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.util.*;
 /** 
  * 类名称：DictionariesController
- * 创建人：FH
+ * @author wang
  * 创建时间：2014年9月2日
  * @version
  */

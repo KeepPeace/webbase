@@ -50,19 +50,15 @@ public class WeixinController extends BaseController{
 	private ImgmsgService imgmsgService;
 	
 	/**
-	 * 接口验证,总入口
-	 * @param out
-	 * @param request
-	 * @param response
-	 * @throws Exception
-	 */
-	 @RequestMapping(value="/index")
-	 public void index(
-			 PrintWriter out,
-			 HttpServletRequest request,
-			 HttpServletResponse response
-			 ) throws Exception{     
-		 logBefore(logger, "微信接口");
+     * 接口验证,总入口
+     * @param out
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @RequestMapping(value="/index")
+    public void index(PrintWriter out, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        logBefore(logger, "微信接口");
 		PageData pd = new PageData();
 		try{
 			pd = this.getPageData();
@@ -83,8 +79,7 @@ public class WeixinController extends BaseController{
 				   list.add(timestamp); 
 				   list.add(nonce); 
 				   Collections.sort(list);							// 排序 
-				   String tmpStr = new MySecurity().encode(list.toString(), 
-				    MySecurity.SHA_1);								// SHA-1加密 
+				   String tmpStr = new MySecurity().encode(list.toString(), MySecurity.SHA_1);								// SHA-1加密
 				   
 				    if (signature.equals(tmpStr)) { 
 				           out.write(echostr);						// 请求验证成功，返回随机码 

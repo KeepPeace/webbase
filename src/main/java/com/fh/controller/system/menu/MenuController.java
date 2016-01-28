@@ -1,25 +1,22 @@
 package com.fh.controller.system.menu;
 
-import java.io.PrintWriter;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.system.Menu;
+import com.fh.service.system.menu.MenuService;
+import com.fh.util.PageData;
 import net.sf.json.JSONArray;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.system.Menu;
-import com.fh.service.system.menu.MenuService;
-import com.fh.util.PageData;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.util.List;
 /** 
  * 类名称：MenuController
- * 创建人：FH 
+ * @author wang
  * 创建时间：2014年7月1日
  * @version
  */
@@ -32,7 +29,7 @@ public class MenuController extends BaseController {
 	
 	/**
 	 * 显示菜单列表
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping
@@ -51,7 +48,7 @@ public class MenuController extends BaseController {
 	
 	/**
 	 * 请求新增菜单页面
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/toAdd")
@@ -70,7 +67,7 @@ public class MenuController extends BaseController {
 	/**
 	 * 保存菜单信息
 	 * @param menu
-	 * @param model
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/add")
@@ -202,7 +199,7 @@ public class MenuController extends BaseController {
 	
 	/**
 	 * 获取当前菜单的所有子菜单
-	 * @param menuId
+	 * @param
 	 * @param response
 	 */
 	@RequestMapping(value="/sub")
@@ -225,7 +222,7 @@ public class MenuController extends BaseController {
 	
 	/**
 	 * 删除菜单
-	 * @param menuId
+	 * @param
 	 * @param out
 	 */
 	@RequestMapping(value="/del")

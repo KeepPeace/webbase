@@ -1,4 +1,5 @@
-﻿<%
+﻿<!-- 功能菜单 -->
+<%
 	String pathl = request.getContextPath();
 	String basePathl = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pathl+"/";
 %>
@@ -39,7 +40,7 @@
 					</li>
 
 
-
+<!-- 菜单列表 -->
 			<c:forEach items="${menuList}" var="menu">
 				<c:if test="${menu.hasMenu}">
 				<li id="lm${menu.MENU_ID }">
@@ -66,10 +67,13 @@
 				</li>
 				</c:if>
 			</c:forEach>
+<!-- 菜单列表end -->
 
 				</ul><!--/.nav-list-->
 
-				<div id="sidebar-collapse"><i class="icon-double-angle-left"></i></div>
+            <!-- 侧边栏收缩 -->
+				<div id="sidebar-collapse"><i class="icon-double-angle-left"> </i></div>
+            <!-- 侧边栏收缩end -->
 
 			</div><!--/#sidebar-->
 

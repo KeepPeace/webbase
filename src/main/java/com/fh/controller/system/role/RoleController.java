@@ -1,15 +1,13 @@
 package com.fh.controller.system.role;
 
-import java.io.PrintWriter;
-import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.entity.system.Menu;
+import com.fh.entity.system.Role;
+import com.fh.service.system.menu.MenuService;
+import com.fh.service.system.role.RoleService;
+import com.fh.util.*;
 import net.sf.json.JSONArray;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -21,21 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.entity.system.Menu;
-import com.fh.entity.system.Role;
-import com.fh.service.system.menu.MenuService;
-import com.fh.service.system.role.RoleService;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.RightsHelper;
-import com.fh.util.Tools;
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /** 
  * 类名称：RoleController
- * 创建人：FH 
+ * @author wang
  * 创建时间：2014年6月30日
  * @version
  */
@@ -176,26 +168,26 @@ public class RoleController extends BaseController {
 			
 			String UUID = this.get32UUID();
 			
-				pd.put("GL_ID", UUID);
-				pd.put("FX_QX", 0);				//发信权限
-				pd.put("FW_QX", 0);				//服务权限
-				pd.put("QX1", 0);				//操作权限
-				pd.put("QX2", 0);				//产品权限
-				pd.put("QX3", 0);				//预留权限
-				pd.put("QX4", 0);				//预留权限
-				if(Jurisdiction.buttonJurisdiction(menuUrl, "add")){roleService.saveKeFu(pd);}//保存到K权限表
-				
-				pd.put("U_ID", UUID);
-				pd.put("C1", 0);				//每日发信数量
-				pd.put("C2", 0);
-				pd.put("C3", 0);
-				pd.put("C4", 0);
-				pd.put("Q1", 0);				//权限1
-				pd.put("Q2", 0);				//权限2
-				pd.put("Q3", 0);
-				pd.put("Q4", 0);
-				if(Jurisdiction.buttonJurisdiction(menuUrl, "add")){roleService.saveGYSQX(pd);}//保存到G权限表
-				pd.put("QX_ID", UUID);
+			pd.put("GL_ID", UUID);
+			pd.put("FX_QX", 0);				//发信权限
+			pd.put("FW_QX", 0);				//服务权限
+			pd.put("QX1", 0);				//操作权限
+			pd.put("QX2", 0);				//产品权限
+			pd.put("QX3", 0);				//预留权限
+			pd.put("QX4", 0);				//预留权限
+			if(Jurisdiction.buttonJurisdiction(menuUrl, "add")){roleService.saveKeFu(pd);}//保存到K权限表
+
+			pd.put("U_ID", UUID);
+			pd.put("C1", 0);				//每日发信数量
+			pd.put("C2", 0);
+			pd.put("C3", 0);
+			pd.put("C4", 0);
+			pd.put("Q1", 0);				//权限1
+			pd.put("Q2", 0);				//权限2
+			pd.put("Q3", 0);
+			pd.put("Q4", 0);
+			if(Jurisdiction.buttonJurisdiction(menuUrl, "add")){roleService.saveGYSQX(pd);}//保存到G权限表
+			pd.put("QX_ID", UUID);
 			
 			pd.put("ROLE_ID", UUID);
 			pd.put("ADD_QX", "0");

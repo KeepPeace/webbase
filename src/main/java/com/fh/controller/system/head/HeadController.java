@@ -1,13 +1,10 @@
 package com.fh.controller.system.head;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.service.system.appuser.AppuserService;
+import com.fh.service.system.user.UserService;
+import com.fh.util.*;
+import com.fh.util.mail.SimpleMailSender;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -16,20 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.service.system.appuser.AppuserService;
-import com.fh.service.system.user.UserService;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.PageData;
-import com.fh.util.SmsUtil;
-import com.fh.util.Tools;
-import com.fh.util.Watermark;
-import com.fh.util.mail.SimpleMailSender;
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /** 
  * 类名称：HeadController
- * 创建人：FH 
+ * @author wang
  * 创建时间：2014年8月16日
  * @version
  */

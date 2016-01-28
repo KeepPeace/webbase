@@ -1,16 +1,9 @@
 package com.fh.controller.weixin.imgmsg;
 
-import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.service.weixin.imgmsg.ImgmsgService;
+import com.fh.util.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -22,19 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.util.AppUtil;
-import com.fh.util.ObjectExcelView;
-import com.fh.util.Const;
-import com.fh.util.PageData;
-import com.fh.util.Tools;
-import com.fh.util.Jurisdiction;
-import com.fh.service.weixin.imgmsg.ImgmsgService;
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /** 
  * 类名称：ImgmsgController
- * 创建人：FH 
+ * @author wang
  * 创建时间：2015-05-10
  */
 @Controller

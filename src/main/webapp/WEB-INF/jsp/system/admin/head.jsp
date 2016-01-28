@@ -1,4 +1,5 @@
-﻿<div class="navbar navbar-inverse">
+﻿<!-- 页面顶部¨ -->
+<div class="navbar navbar-inverse">
 		  <div class="navbar-inner">
 		   <div class="container-fluid">
 			  <a class="brand"><small><i class="icon-leaf"></i> ${pd.SYSNAME}</small> </a>

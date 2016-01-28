@@ -21,7 +21,7 @@ import com.fh.util.PathUtil;
 
 /** 
  * 类名称：FreemarkerController
- * 创建人：FH 
+ * @author wang
  * 创建时间：2015年1月12日
  * @version
  */

@@ -26,7 +26,10 @@ public class LoginFilter extends BaseController implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-		
+		String requestUrl = ((HttpServletRequest) req).getRequestURL().toString();
+		if (!requestUrl.contains("/static/") && !requestUrl.contains("/plugins/") && !requestUrl.contains("/uploadFiles/")) {
+			logger.info("request path:" + ((HttpServletRequest) req).getRequestURL());
+		}
 		chain.doFilter(req, res); // 调用下一过滤器
 	}
 

@@ -1,13 +1,13 @@
 package com.fh.controller.system.login;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.system.Menu;
+import com.fh.entity.system.Role;
+import com.fh.entity.system.User;
+import com.fh.service.system.menu.MenuService;
+import com.fh.service.system.role.RoleService;
+import com.fh.service.system.user.UserService;
+import com.fh.util.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -20,19 +20,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.system.Menu;
-import com.fh.entity.system.Role;
-import com.fh.entity.system.User;
-import com.fh.service.system.menu.MenuService;
-import com.fh.service.system.role.RoleService;
-import com.fh.service.system.user.UserService;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.DateUtil;
-import com.fh.util.PageData;
-import com.fh.util.RightsHelper;
-import com.fh.util.Tools;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /*
  * 总入口
  */
@@ -240,8 +233,8 @@ public class LoginController extends BaseController {
 				}
 				
 				//FusionCharts 报表
-			 	String strXML = "<graph caption='前12个月订单销量柱状图' xAxisName='月份' yAxisName='值' decimalPrecision='0' formatNumberScale='0'><set name='2013-05' value='4' color='AFD8F8'/><set name='2013-04' value='0' color='AFD8F8'/><set name='2013-03' value='0' color='AFD8F8'/><set name='2013-02' value='0' color='AFD8F8'/><set name='2013-01' value='0' color='AFD8F8'/><set name='2012-01' value='0' color='AFD8F8'/><set name='2012-11' value='0' color='AFD8F8'/><set name='2012-10' value='0' color='AFD8F8'/><set name='2012-09' value='0' color='AFD8F8'/><set name='2012-08' value='0' color='AFD8F8'/><set name='2012-07' value='0' color='AFD8F8'/><set name='2012-06' value='0' color='AFD8F8'/></graph>" ;
-			 	mv.addObject("strXML", strXML);
+//			 	String strXML = "<graph caption='前12个月订单销量柱状图' xAxisName='月份' yAxisName='值' decimalPrecision='0' formatNumberScale='0'><set name='2013-05' value='4' color='AFD8F8'/><set name='2013-04' value='0' color='AFD8F8'/><set name='2013-03' value='0' color='AFD8F8'/><set name='2013-02' value='0' color='AFD8F8'/><set name='2013-01' value='0' color='AFD8F8'/><set name='2012-01' value='0' color='AFD8F8'/><set name='2012-11' value='0' color='AFD8F8'/><set name='2012-10' value='0' color='AFD8F8'/><set name='2012-09' value='0' color='AFD8F8'/><set name='2012-08' value='0' color='AFD8F8'/><set name='2012-07' value='0' color='AFD8F8'/><set name='2012-06' value='0' color='AFD8F8'/></graph>" ;
+//			 	mv.addObject("strXML", strXML);
 			 	//FusionCharts 报表
 			 	
 			 	//读取websocket配置
@@ -294,7 +287,7 @@ public class LoginController extends BaseController {
 	
 	/**
 	 * 用户注销
-	 * @param session
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/logout")
@@ -317,8 +310,8 @@ public class LoginController extends BaseController {
 		session.removeAttribute("changeMenu");
 		
 		//shiro销毁登录
-		Subject subject = SecurityUtils.getSubject(); 
-		subject.logout();
+//		Subject subject = SecurityUtils.getSubject();
+		currentUser.logout();
 		
 		pd = this.getPageData();
 		String  msg = pd.getString("msg");

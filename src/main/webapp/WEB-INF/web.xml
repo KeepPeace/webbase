@@ -13,6 +13,7 @@
 		<param-value>classpath:log4j.properties</param-value>
 	</context-param>
 
+	<!-- 编码过滤器 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -26,7 +27,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<!-- 连接池 启用Web监控统计功能   start-->
+	<!-- druid连接池 启用Web监控统计功能   start-->
 	<filter>
 		<filter-name>DruidWebStatFilter</filter-name>
 		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
@@ -49,6 +50,7 @@
 	</servlet-mapping>
 	<!-- 连接池 启用Web监控统计功能   end-->
 
+	<!-- 登录过滤器 -->
 	<filter>
 		<filter-name>loginFilter</filter-name>
 		<filter-class>com.fh.filter.LoginFilter</filter-class>
@@ -65,7 +67,8 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
+	<!-- springMvc -->
 	<servlet>
 		<servlet-name>springMvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -79,8 +82,7 @@
 		<servlet-name>springMvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	<!-- 项目启动时执行 -->
+
     <!-- 没有配置filter-mapping -->
 	<!--<filter>-->
 		<!--<filter-name>startFilter</filter-name>-->

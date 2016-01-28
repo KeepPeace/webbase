@@ -98,7 +98,7 @@
 <div class="row-fluid">
 	
 	<!-- 检索  -->
-	<form action="<%=basePath%>/dictionaries.do" method="post" name="userForm" id="userForm">
+	<form action="<%=basePath%>dictionaries.do" method="post" name="userForm" id="userForm">
 	<input name="PARENT_ID" id="PARENT_ID" type="hidden" value="${pd.PARENT_ID }" />
 	<table>
 		<tr>
@@ -108,9 +108,9 @@
 			<c:if test="${pd.PARENT_ID != '0'}">
 				<c:choose>
 				<c:when test="${not empty varsList}">
-				<td style="vertical-align:top;"><a href="<%=basePath%>/dictionaries.do?PARENT_ID=0" class="btn btn-mini btn-purple" title="查看">顶级<i class="icon-arrow-right  icon-on-right"></i></a></td>
+				<td style="vertical-align:top;"><a href="<%=basePath%>dictionaries.do?PARENT_ID=0" class="btn btn-mini btn-purple" title="查看">顶级<i class="icon-arrow-right  icon-on-right"></i></a></td>
 				<c:forEach items="${varsList}" var="var" varStatus="vsd">
-				<td style="vertical-align:top;"><a href="<%=basePath%>/dictionaries.do?PARENT_ID=${var.ZD_ID }" class="btn btn-mini btn-purple" title="查看">${var.NAME }<i class="icon-arrow-right  icon-on-right"></i></a></td>
+				<td style="vertical-align:top;"><a href="<%=basePath%>dictionaries.do?PARENT_ID=${var.ZD_ID }" class="btn btn-mini btn-purple" title="查看">${var.NAME }<i class="icon-arrow-right  icon-on-right"></i></a></td>
 				</c:forEach>
 				</c:when>
 				<c:otherwise>
@@ -137,7 +137,7 @@
 				<c:forEach items="${varList}" var="var" varStatus="vs">
 				<tr>
 				<td class="center">${var.ORDY_BY }</td>
-				<td class='center'><a href="<%=basePath%>/dictionaries.do?PARENT_ID=${var.ZD_ID }" title="查看下级"><i class="icon-arrow-right  icon-on-right"></i>&nbsp;${var.NAME }</a></td>
+				<td class='center'><a href="<%=basePath%>dictionaries.do?PARENT_ID=${var.ZD_ID }" title="查看下级"><i class="icon-arrow-right  icon-on-right"></i>&nbsp;${var.NAME }</a></td>
 				<td class='center'>${var.P_BM }</td>
 				<td class='center' style="width:35px;"><b class="green">${var.JB }</b></td>
 				<td style="width: 68px;">
@@ -159,7 +159,7 @@
 			<tr>
 				<td style="vertical-align:top;width:50px;"><a class="btn btn-small btn-success" onclick="add('${pd.PARENT_ID}');">新增</a></td>
 				<c:if test="${pd.PARENT_ID != '0'}">
-					<td style="vertical-align:top;" class="left"><a class="btn btn-small btn-info" onclick="location.href='<%=basePath%>/dictionaries.do?PARENT_ID=${pdp.PARENT_ID }';">返回</a></td>
+					<td style="vertical-align:top;" class="left"><a class="btn btn-small btn-info" onclick="location.href='<%=basePath%>dictionaries.do?PARENT_ID=${pdp.PARENT_ID }';">返回</a></td>
 				</c:if>
 				<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 			</tr>

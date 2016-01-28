@@ -8,6 +8,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+<!-- 主页 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,14 +32,14 @@
 </head>
 <body>
 
-	<!-- 页面顶部¨ -->
+	<!-- 引入页面顶部¨ -->
 	<%@ include file="head.jsp"%>
 	<div id="websocket_button"></div>
 	<div class="container-fluid" id="main-container">
 		<a href="#" id="menu-toggler"><span></span></a>
 		<!-- menu toggler -->
 
-		<!-- 左侧菜单 -->
+		<!-- 引入左侧菜单 -->
 		<%@ include file="left.jsp"%>
 
 		<div id="main-content" class="clearfix">
@@ -51,9 +52,11 @@
 			</div>
 			</div>
 
+			<!-- start 首页内容 -->
 			<div>
 				<iframe name="mainFrame" id="mainFrame" frameborder="0" src="tab.do" style="margin:0 auto;width:100%;height:100%;"></iframe>
 			</div>
+			<!-- end 首页内容 -->
 
 			<!-- 换肤 -->
 			<div id="ace-settings-container">
